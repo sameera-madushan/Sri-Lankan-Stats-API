@@ -13,9 +13,9 @@ return new class extends Migration
     {
         Schema::create('provinces', function (Blueprint $table) {
             $table->id();
-            $table->string('name_en'); // Province name in English
-            $table->string('name_si'); // Province name in Sinhala
-            $table->string('name_ta'); // Province name in Tamil
+            $table->string('name_en')->nullable(); // Province name in English
+            $table->string('name_si')->nullable(); // Province name in Sinhala
+            $table->string('name_ta')->nullable(); // Province name in Tamil
             $table->timestamps();
         });
     }

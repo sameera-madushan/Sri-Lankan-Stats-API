@@ -14,11 +14,11 @@ return new class extends Migration
         Schema::create('cities', function (Blueprint $table) {
             $table->id();
             $table->foreignId('district_id')->constrained('districts')->onDelete('cascade');
-            $table->string('name_en'); // City name in English
-            $table->string('name_si'); // City name in Sinhala
-            $table->string('name_ta'); // City name in Tamil
-            $table->decimal('latitude', 10, 8); // Latitude of the city
-            $table->decimal('longitude', 11, 8); // Longitude of the city
+            $table->string('name_en')->nullable(); // City name in English
+            $table->string('name_si')->nullable(); // City name in Sinhala
+            $table->string('name_ta')->nullable(); // City name in Tamil
+            $table->decimal('latitude', 10, 8)->nullable(); // Latitude of the city
+            $table->decimal('longitude', 11, 8)->nullable(); // Longitude of the city
             $table->timestamps();
         });
     }

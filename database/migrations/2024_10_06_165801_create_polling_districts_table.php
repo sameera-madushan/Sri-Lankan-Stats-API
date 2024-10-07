@@ -13,9 +13,9 @@ return new class extends Migration
     {
         Schema::create('polling_districts', function (Blueprint $table) {
             $table->id();
-            $table->string('name_en'); // Polling District name in English
-            $table->string('name_si'); // Polling District name in Sinhala
-            $table->string('name_ta'); // Polling District name in Tamil
+            $table->string('name_en')->nullable(); // Polling District name in English
+            $table->string('name_si')->nullable(); // Polling District name in Sinhala
+            $table->string('name_ta')->nullable(); // Polling District name in Tamil
             $table->timestamps();
         });
     }

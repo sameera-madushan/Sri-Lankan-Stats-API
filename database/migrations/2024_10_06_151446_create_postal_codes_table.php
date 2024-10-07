@@ -13,8 +13,8 @@ return new class extends Migration
     {
         Schema::create('postal_codes', function (Blueprint $table) {
             $table->id();
-            $table->string('post_office_name'); // Post office name
-            $table->string('postal_code'); // Postal code
+            $table->string('post_office_name')->nullable(); // Post office name
+            $table->string('postal_code')->nullable(); // Postal code
             $table->timestamps();
         });
     }
