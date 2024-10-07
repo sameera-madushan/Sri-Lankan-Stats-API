@@ -5,7 +5,7 @@ namespace App\Http\Resources;
 use Illuminate\Http\Request;
 use Illuminate\Http\Resources\Json\JsonResource;
 
-class ProvinceResource extends JsonResource
+class CityResource extends JsonResource
 {
     /**
      * Transform the resource into an array.
@@ -15,10 +15,12 @@ class ProvinceResource extends JsonResource
     public function toArray(Request $request): array
     {
         return [
-            'province_id' => $this->id,
-            'province_name_en' => $this->name_en,
-            'province_name_si' => $this->name_si,
-            'province_name_ta' => $this->name_ta,
+
+            'city_name_en' => $this->name_en,
+            'city_name_si' => $this->name_si,
+            'city_name_ta' => $this->name_ta,
+            'latitude' => $this->latitude,
+            'longitude' => $this->longitude
         ];
     }
 }
