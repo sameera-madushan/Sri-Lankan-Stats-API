@@ -16,7 +16,8 @@ class DatabaseSeeder extends Seeder
             DistrictSeeder::class,
             CitySeeder::class,
             PostalCodeSeeder::class,
-            PollingDistrictSeeder::class
+            PollingDistrictSeeder::class,
+            PollingDivisionSeeder::class,
         ]);
     }
 }
