@@ -45,6 +45,10 @@ class ProvinceController extends Controller
      *     @OA\Response(
      *         response=200,
      *         description="Successful response",
+     *     ),
+     *     @OA\Response(
+     *         response=404,
+     *         description="Not found",
      *     )
      * )
      */
@@ -71,6 +75,10 @@ class ProvinceController extends Controller
      *     @OA\Response(
      *         response=200,
      *         description="Successful response",
+     *     ),
+     *     @OA\Response(
+     *         response=404,
+     *         description="Not found",
      *     )
      * )
      */
