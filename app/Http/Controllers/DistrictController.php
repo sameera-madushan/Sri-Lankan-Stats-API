@@ -6,6 +6,7 @@ use App\Models\District;
 use Illuminate\Http\Request;
 use App\Http\Resources\CityResource;
 use App\Http\Resources\DistrictResource;
+use App\Http\Resources\ProvinceResource;
 
 class DistrictController extends Controller
 {
@@ -50,5 +51,31 @@ class DistrictController extends Controller
     {
         $cities = $district->cities;
         return CityResource::collection($cities);
+    }
+
+    /**
+     * @OA\Get(
+     *     path="/districts/get-province/{district}",
+     *     summary="Get province of a district",
+     *     tags={"Districts"},
+     *     @OA\Parameter(
+     *         name="district",
+     *         in="path",
+     *         required=true,
+     *         description="The ID of the district",
+     *         @OA\Schema(
+     *             type="integer"
+     *         )
+     *     ),
+     *     @OA\Response(
+     *         response=200,
+     *         description="Successful response",
+     *     )
+     * )
+     */
+    public function getProvinceofDistrict(District $district)
+    {
+        $province = $district->province;
+        return new ProvinceResource($province);
     }
 }
