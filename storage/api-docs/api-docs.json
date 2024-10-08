@@ -1,0 +1,136 @@
+{
+    "openapi": "3.0.0",
+    "info": {
+        "title": "Sri Lankan Stats API",
+        "description": "API that provides detailed information about Sri Lanka, including postal codes, districts, provinces, etc...",
+        "contact": {
+            "email": "sameera.xyz.me@gmail.com"
+        },
+        "license": {
+            "name": "Apache 2.0",
+            "url": "http://www.apache.org/licenses/LICENSE-2.0.html"
+        },
+        "version": "1.0.0"
+    },
+    "servers": [
+        {
+            "url": "http://127.0.0.1:8000/api/v1",
+            "description": "Local API Server"
+        }
+    ],
+    "paths": {
+        "/districts": {
+            "get": {
+                "tags": [
+                    "Districts"
+                ],
+                "summary": "Get list of districts",
+                "operationId": "ff007291e03b52862d5177099c524ef3",
+                "responses": {
+                    "200": {
+                        "description": "Successful response"
+                    }
+                }
+            }
+        },
+        "/districts/get-cities/{district}": {
+            "get": {
+                "tags": [
+                    "Districts"
+                ],
+                "summary": "Get all cities in a district",
+                "operationId": "88a20013e7faa260939ec7eda142d19a",
+                "parameters": [
+                    {
+                        "name": "district",
+                        "in": "path",
+                        "description": "The ID of the district",
+                        "required": true,
+                        "schema": {
+                            "type": "integer"
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Successful response"
+                    }
+                }
+            }
+        },
+        "/provinces": {
+            "get": {
+                "tags": [
+                    "Provinces"
+                ],
+                "summary": "Get list of provinces",
+                "operationId": "4e48884f32c44ed876d5cc6360d50938",
+                "responses": {
+                    "200": {
+                        "description": "Successful response"
+                    }
+                }
+            }
+        },
+        "/provinces/get-districts/{province}": {
+            "get": {
+                "tags": [
+                    "Provinces"
+                ],
+                "summary": "Get all district in a province",
+                "operationId": "ec43e772b94a5a72dfcf58a77a1b1e7d",
+                "parameters": [
+                    {
+                        "name": "province",
+                        "in": "path",
+                        "description": "The ID of the province",
+                        "required": true,
+                        "schema": {
+                            "type": "integer"
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Successful response"
+                    }
+                }
+            }
+        },
+        "/provinces/get-cities/{province}": {
+            "get": {
+                "tags": [
+                    "Provinces"
+                ],
+                "summary": "Get all cities in a province",
+                "operationId": "31d5f0483bf86db5e3d2e7a41baa4016",
+                "parameters": [
+                    {
+                        "name": "province",
+                        "in": "path",
+                        "description": "The ID of the province",
+                        "required": true,
+                        "schema": {
+                            "type": "integer"
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Successful response"
+                    }
+                }
+            }
+        }
+    },
+    "tags": [
+        {
+            "name": "Districts",
+            "description": "Districts"
+        },
+        {
+            "name": "Provinces",
+            "description": "Provinces"
+        }
+    ]
+}
