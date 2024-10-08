@@ -16,9 +16,6 @@ class DistrictResource extends JsonResource
     {
         return [
             'district_id' => $this->id,
-            'province_name_en' => $this->province->name_en,
-            'province_name_si' => $this->province->name_si,
-            'province_name_ta' => $this->province->name_ta,
             'district_code_en' => $this->district_code_en,
             'district_code_si' => $this->district_code_si,
             'district_code_ta' => $this->district_code_ta,
