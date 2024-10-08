@@ -8,4 +8,7 @@ use Illuminate\Database\Eloquent\Model;
 class PostalCode extends Model
 {
     use HasFactory;
+
+    protected $primaryKey = 'postal_code';
+    protected $keyType = 'string';
 }
