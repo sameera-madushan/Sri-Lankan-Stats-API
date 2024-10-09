@@ -6,6 +6,8 @@ use App\Http\Controllers\CityController;
 use App\Http\Controllers\DistrictController;
 use App\Http\Controllers\ProvinceController;
 use App\Http\Controllers\PostalCodeController;
+use App\Http\Controllers\PollingDistrictController;
+use App\Http\Controllers\PollingDivisionController;
 
 Route::prefix('v1')->group(function () {
 
@@ -28,4 +30,12 @@ Route::prefix('v1')->group(function () {
     Route::get('/postal-codes', [PostalCodeController::class, 'getAllPostalCodes']);
     Route::get('/postal-codes/get-post-office/{postal_code}', [PostalCodeController::class, 'getPostOfficeofPostalCode']);
     Route::get('/postal-codes/get-postal-code/{postal_office_name}', [PostalCodeController::class, 'getPostalCodeofPostalOffice']);
+
+    // Polling Districts
+    Route::get('/polling-districts', [PollingDistrictController::class, 'getAllPollingDistricts']);
+    Route::get('/polling-districts/get-polling-divisions/{polling_district}', [PollingDistrictController::class, 'getPollingDivisionsofPollingDistrict']);
+
+    // Polling Divisions
+    Route::get('/polling-divisions', [PollingDivisionController::class, 'getAllPollingDivisions']);
+    Route::get('/polling-divisions/get-polling-district/{polling_division}', [PollingDivisionController::class, 'getPollingDistrictofPollingDivision']);
 });
