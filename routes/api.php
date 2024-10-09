@@ -20,6 +20,7 @@ Route::prefix('v1')->group(function () {
     Route::get('/districts', [DistrictController::class, 'getAllDistricts']);
     Route::get('/districts/get-cities/{district}', [DistrictController::class, 'getAllCitiesInDistrict']);
     Route::get('/districts/get-province/{district}', [DistrictController::class, 'getProvinceofDistrict']);
+    Route::get('/districts/get-map/{district}', [DistrictController::class, 'getMapofDistrict']);
 
     // Cities
     Route::get('/cities', [CityController::class, 'getAllCities']);
