@@ -7,6 +7,7 @@ use Illuminate\Http\Request;
 use App\Http\Resources\CityResource;
 use App\Http\Resources\DistrictResource;
 use App\Http\Resources\ProvinceResource;
+use App\Models\DistrictMap;
 
 class DistrictController extends Controller
 {
@@ -85,5 +86,35 @@ class DistrictController extends Controller
     {
         $province = $district->province;
         return new ProvinceResource($province);
+    }
+
+    /**
+     * @OA\Get(
+     *     path="/districts/get-map/{district}",
+     *     summary="Get SVG map of a district",
+     *     tags={"Districts"},
+     *     @OA\Parameter(
+     *         name="district",
+     *         in="path",
+     *         required=true,
+     *         description="The ID of the district",
+     *         @OA\Schema(
+     *             type="integer"
+     *         )
+     *     ),
+     *     @OA\Response(
+     *         response=200,
+     *         description="Successful response",
+     *     ),
+     *     @OA\Response(
+     *         response=404,
+     *         description="Not found",
+     *     )
+     * )
+     */
+    public function getMapofDistrict(DistrictMap $district)
+    {
+        $decodedSvg = base64_decode($district->svg_base64);
+        return response($decodedSvg)->header('Content-Type', 'image/svg+xml');
     }
 }
