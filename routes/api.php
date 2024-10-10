@@ -15,11 +15,13 @@ Route::prefix('v1')->group(function () {
     Route::get('/provinces', [ProvinceController::class, 'getAllProvinces']);
     Route::get('/provinces/get-districts/{province}', [ProvinceController::class, 'getAllDistrictsInProvince']);
     Route::get('/provinces/get-cities/{province}', [ProvinceController::class, 'getAllCitiesInProvince']);
+    Route::get('/provinces/get-map/{province}', [ProvinceController::class, 'getMapofProvince']);
 
     // Districts
     Route::get('/districts', [DistrictController::class, 'getAllDistricts']);
     Route::get('/districts/get-cities/{district}', [DistrictController::class, 'getAllCitiesInDistrict']);
     Route::get('/districts/get-province/{district}', [DistrictController::class, 'getProvinceofDistrict']);
+    Route::get('/districts/get-map/{district}', [DistrictController::class, 'getMapofDistrict']);
 
     // Cities
     Route::get('/cities', [CityController::class, 'getAllCities']);

@@ -8,6 +8,7 @@ use Illuminate\Http\Request;
 use App\Http\Resources\CityResource;
 use App\Http\Resources\DistrictResource;
 use App\Http\Resources\ProvinceResource;
+use App\Models\ProvinceMap;
 
 class ProvinceController extends Controller
 {
@@ -87,5 +88,35 @@ class ProvinceController extends Controller
         $districts = $province->district()->with('cities')->get();
         $cities = $districts->pluck('cities')->flatten();
         return CityResource::collection($cities);
+    }
+
+    /**
+     * @OA\Get(
+     *     path="/provinces/get-map/{province}",
+     *     summary="Get SVG map of a province",
+     *     tags={"Provinces"},
+     *     @OA\Parameter(
+     *         name="province",
+     *         in="path",
+     *         required=true,
+     *         description="The ID of the province",
+     *         @OA\Schema(
+     *             type="integer"
+     *         )
+     *     ),
+     *     @OA\Response(
+     *         response=200,
+     *         description="Successful response",
+     *     ),
+     *     @OA\Response(
+     *         response=404,
+     *         description="Not found",
+     *     )
+     * )
+     */
+    public function getMapofProvince(ProvinceMap $province)
+    {
+        $decodedSvg = base64_decode($province->svg_base64);
+        return response($decodedSvg)->header('Content-Type', 'image/svg+xml');
     }
 }

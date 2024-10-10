@@ -18,6 +18,8 @@ class DatabaseSeeder extends Seeder
             PostalCodeSeeder::class,
             PollingDistrictSeeder::class,
             PollingDivisionSeeder::class,
+            DistrictMapSeeder::class,
+            ProvinceMapSeeder::class,
         ]);
     }
 }
