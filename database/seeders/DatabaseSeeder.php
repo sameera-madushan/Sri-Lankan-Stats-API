@@ -19,6 +19,7 @@ class DatabaseSeeder extends Seeder
             PollingDistrictSeeder::class,
             PollingDivisionSeeder::class,
             DistrictMapSeeder::class,
+            ProvinceMapSeeder::class,
         ]);
     }
 }
