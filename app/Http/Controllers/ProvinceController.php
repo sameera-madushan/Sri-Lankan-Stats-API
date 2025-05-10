@@ -17,6 +17,7 @@ class ProvinceController extends Controller
      *     path="/provinces",
      *     summary="Get list of provinces",
      *     tags={"Provinces"},
+     *     security={{"sanctum": {}}},
      *     @OA\Response(
      *         response=200,
      *         description="Successful response",
@@ -34,6 +35,7 @@ class ProvinceController extends Controller
      *     path="/provinces/get-districts/{province}",
      *     summary="Get all district in a province",
      *     tags={"Provinces"},
+     *     security={{"sanctum": {}}},
      *     @OA\Parameter(
      *         name="province",
      *         in="path",
@@ -64,6 +66,7 @@ class ProvinceController extends Controller
      *     path="/provinces/get-cities/{province}",
      *     summary="Get all cities in a province",
      *     tags={"Provinces"},
+     *     security={{"sanctum": {}}},
      *     @OA\Parameter(
      *         name="province",
      *         in="path",
@@ -95,6 +98,7 @@ class ProvinceController extends Controller
      *     path="/provinces/get-map/{province}",
      *     summary="Get SVG map of a province",
      *     tags={"Provinces"},
+     *     security={{"sanctum": {}}},
      *     @OA\Parameter(
      *         name="province",
      *         in="path",

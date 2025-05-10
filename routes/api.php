@@ -2,6 +2,7 @@
 
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\AuthController;
 use App\Http\Controllers\CityController;
 use App\Http\Controllers\DistrictController;
 use App\Http\Controllers\ProvinceController;
@@ -9,7 +10,14 @@ use App\Http\Controllers\PostalCodeController;
 use App\Http\Controllers\PollingDistrictController;
 use App\Http\Controllers\PollingDivisionController;
 
+// Authentication Routes
 Route::prefix('v1')->group(function () {
+    Route::post('/login', [AuthController::class, 'login'])->name('login');
+    Route::post('/register', [AuthController::class, 'register']);
+    Route::post('/logout', [AuthController::class, 'logout'])->middleware('auth:sanctum');
+});
+
+Route::prefix('v1')->middleware('auth:sanctum')->group(function () {
 
     // Provinces
     Route::get('/provinces', [ProvinceController::class, 'getAllProvinces']);

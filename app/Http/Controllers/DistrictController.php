@@ -16,6 +16,7 @@ class DistrictController extends Controller
      *     path="/districts",
      *     summary="Get list of districts",
      *     tags={"Districts"},
+     *     security={{"sanctum": {}}},
      *     @OA\Response(
      *         response=200,
      *         description="Successful response",
@@ -33,6 +34,7 @@ class DistrictController extends Controller
      *     path="/districts/get-cities/{district}",
      *     summary="Get all cities in a district",
      *     tags={"Districts"},
+     *     security={{"sanctum": {}}},
      *     @OA\Parameter(
      *         name="district",
      *         in="path",
@@ -63,6 +65,7 @@ class DistrictController extends Controller
      *     path="/districts/get-province/{district}",
      *     summary="Get province of a district",
      *     tags={"Districts"},
+     *     security={{"sanctum": {}}},
      *     @OA\Parameter(
      *         name="district",
      *         in="path",
@@ -93,6 +96,7 @@ class DistrictController extends Controller
      *     path="/districts/get-map/{district}",
      *     summary="Get SVG map of a district",
      *     tags={"Districts"},
+     *     security={{"sanctum": {}}},
      *     @OA\Parameter(
      *         name="district",
      *         in="path",

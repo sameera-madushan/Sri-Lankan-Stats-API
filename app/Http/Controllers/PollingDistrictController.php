@@ -13,6 +13,7 @@ class PollingDistrictController extends Controller
      *     path="/polling-districts",
      *     summary="Get list of polling districts",
      *     tags={"Polling Districts"},
+     *     security={{"sanctum": {}}},
      *     @OA\Response(
      *         response=200,
      *         description="Successful response",
@@ -30,6 +31,7 @@ class PollingDistrictController extends Controller
      *     path="/polling-districts/get-polling-divisions/{polling_district}",
      *     summary="Get all polling divisions in a polling district",
      *     tags={"Polling Districts"},
+     *     security={{"sanctum": {}}},
      *     @OA\Parameter(
      *         name="polling_district",
      *         in="path",

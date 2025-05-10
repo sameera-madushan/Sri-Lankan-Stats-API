@@ -14,6 +14,7 @@ class PostalCodeController extends Controller
      *     path="/postal-codes",
      *     summary="Get list of postal codes",
      *     tags={"Postal Codes"},
+     *     security={{"sanctum": {}}},
      *     @OA\Response(
      *         response=200,
      *         description="Successful response",
@@ -31,6 +32,7 @@ class PostalCodeController extends Controller
      *     path="/postal-codes/get-post-office/{postal_code}",
      *     summary="Get post office of postal code",
      *     tags={"Postal Codes"},
+     *     security={{"sanctum": {}}},
      *     @OA\Parameter(
      *         name="postal_code",
      *         in="path",
@@ -61,6 +63,7 @@ class PostalCodeController extends Controller
      *     path="/postal-codes/get-postal-code/{postal_office_name}",
      *     summary="Get postal code of postal office",
      *     tags={"Postal Codes"},
+     *     security={{"sanctum": {}}},
      *     @OA\Parameter(
      *         name="postal_office_name",
      *         in="path",

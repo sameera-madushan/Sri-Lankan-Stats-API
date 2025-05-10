@@ -15,6 +15,7 @@ class CityController extends Controller
      *     path="/cities",
      *     summary="Get list of cities",
      *     tags={"Cities"},
+     *     security={{"sanctum": {}}},
      *     @OA\Response(
      *         response=200,
      *         description="Successful response",
@@ -32,6 +33,7 @@ class CityController extends Controller
      *     path="/cities/get-district/{city}",
      *     summary="Get district of a city",
      *     tags={"Cities"},
+     *     security={{"sanctum": {}}},
      *     @OA\Parameter(
      *         name="city",
      *         in="path",
@@ -62,6 +64,7 @@ class CityController extends Controller
      *     path="/cities/get-province/{city}",
      *     summary="Get province of a city",
      *     tags={"Cities"},
+     *     security={{"sanctum": {}}},
      *     @OA\Parameter(
      *         name="city",
      *         in="path",
