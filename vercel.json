@@ -14,6 +14,7 @@
         "APP_ENV": "production",
         "APP_DEBUG": "true",
         "APP_URL": "https://sri-lankan-stats.vercel.app",
+        "APP_KEY": "base64:sv+nsw9HGSFLDHzFch9bi44FxarH8VvUR+K59eePhTI=",
 
         "APP_CONFIG_CACHE": "/tmp/config.php",
         "APP_EVENTS_CACHE": "/tmp/events.php",
